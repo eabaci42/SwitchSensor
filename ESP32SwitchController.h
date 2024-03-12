@@ -1,12 +1,12 @@
-#ifndef ESP32InterruptController_h
-#define ESP32InterruptController_h
+#ifndef ESP32SwitchController_h
+#define ESP32SwitchController_h
 
 #include <Arduino.h>
 
-class ESP32InterruptController {
+class ESP32SwitchController {
 public:
-    ESP32InterruptController(int pin, void (*callback)(), int mode = RISING); // Constructor
-    ~ESP32InterruptController(); // Destructor
+    ESP32SwitchController(int pin, void (*callback)(), int mode = RISING); // Constructor
+    ~ESP32SwitchController(); // Destructor
 
     void enable();  // Enable interrupt
     void disable(); // Disable interrupt

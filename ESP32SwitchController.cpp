@@ -1,6 +1,6 @@
-#include "ESP32InterruptController.h"
+#include "ESP32SwitchController.h"
 
-ESP32InterruptController::ESP32InterruptController(int pin, void (*callback)(), int mode) {
+ESP32SwitchController::ESP32SwitchController(int pin, void (*callback)(), int mode) {
     this->pin = pin;
     this->callback = callback;
     this->mode = mode;
@@ -8,14 +8,14 @@ ESP32InterruptController::ESP32InterruptController(int pin, void (*callback)(), 
     attachInterrupt(digitalPinToInterrupt(pin), callback, mode);
 }
 
-ESP32InterruptController::~ESP32InterruptController() {
+ESP32SwitchController::~ESP32SwitchController() {
     detachInterrupt(digitalPinToInterrupt(pin));
 }
 
-void ESP32InterruptController::enable() {
+void ESP32SwitchController::enable() {
     attachInterrupt(digitalPinToInterrupt(pin), callback, mode);
 }
 
-void ESP32InterruptController::disable() {
+void ESP32SwitchController::disable() {
     detachInterrupt(digitalPinToInterrupt(pin));
 }
